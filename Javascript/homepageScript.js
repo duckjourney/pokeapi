@@ -17,6 +17,7 @@ for (let i = 1; i <= 251; i++) {
 }
 // Sort results, as they come unordered
 function showPokemonList() {
+    pokemonList.sort((a, z) => a.id - z.id);
     let $row = createRow();
     pokemonList.forEach((pokemon) => {
         showData(pokemon, $row);

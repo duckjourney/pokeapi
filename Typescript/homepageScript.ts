@@ -33,6 +33,8 @@ for (let i = 1; i <= 251; i++) {
 
 function showPokemonList():void {
   
+  pokemonList.sort((a:pokeInfo, z:pokeInfo) => a.id - z.id);
+
   let $row = createRow();
 
   pokemonList.forEach((pokemon:any) => {
