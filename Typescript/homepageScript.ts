@@ -89,4 +89,25 @@ function showData(pokemon:pokeInfo, $row:HTMLElement):void {
   $row.appendChild($column);
 }
 
+// Search bar
+
+const $searchInput = document.getElementById("searchInput") as HTMLInputElement;
+
+if ($searchInput !== null) {
+  $searchInput.addEventListener("input", () => {
+    const searchText = $searchInput.value.toLowerCase();
+
+    const pokemonToSearch = document.getElementsByClassName("pokemon");
+
+    for (let i = 0; i < pokemonToSearch.length; i++) {
+      const eachPokemon = pokemonToSearch[i] as HTMLElement;
+      const pokemonName = eachPokemon.innerText.toLowerCase();
+      if (pokemonName.includes(searchText)) {
+        eachPokemon.style.display = "";
+      } else {
+        eachPokemon.style.display = "none";
+      }
+    }
+  });
+}
 

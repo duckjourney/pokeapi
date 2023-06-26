@@ -52,3 +52,21 @@ function showData(pokemon, $row) {
     $column.appendChild($link);
     $row.appendChild($column);
 }
+// Search bar
+const $searchInput = document.getElementById("searchInput");
+if ($searchInput !== null) {
+    $searchInput.addEventListener("input", () => {
+        const searchText = $searchInput.value.toLowerCase();
+        const pokemonToSearch = document.getElementsByClassName("pokemon");
+        for (let i = 0; i < pokemonToSearch.length; i++) {
+            const eachPokemon = pokemonToSearch[i];
+            const pokemonName = eachPokemon.innerText.toLowerCase();
+            if (pokemonName.includes(searchText)) {
+                eachPokemon.style.display = "";
+            }
+            else {
+                eachPokemon.style.display = "none";
+            }
+        }
+    });
+}
