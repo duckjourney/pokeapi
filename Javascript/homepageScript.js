@@ -45,7 +45,7 @@ function showData(pokemon, $row) {
     $img.src = pokemon.sprites.other["official-artwork"].front_default;
     $img.alt = pokemon.name;
     const $link = document.createElement("a");
-    $link.href = "../stats.html";
+    $link.href = `./stats.html?name=${pokemon.name}`;
     $link.appendChild($name);
     $link.appendChild($id);
     $link.appendChild($img);

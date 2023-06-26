@@ -78,7 +78,7 @@ function showData(pokemon:pokeInfo, $row:HTMLElement):void {
   $img.alt = pokemon.name;
 
   const $link = document.createElement("a");
-  $link.href = "../stats.html";
+  $link.href = `./stats.html?name=${pokemon.name}`;
 
   $link.appendChild($name);
   $link.appendChild($id);
