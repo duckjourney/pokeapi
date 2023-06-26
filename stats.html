@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stats</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+  <link rel="stylesheet" href="statsStyle.css">
+</head>
+<body>
+  <div class="container is-fullhd is-fluid has-background-danger">
+    <div class="columns is-fluid has-text-centered">
+      <img id="statsImg" class="column is-6 image mb-2" src="" alt="">
+      <h1 id="name" class="title is-2"></h1>
+    </div>
+    <div class="stats">
+      <label class="title is-5 has-text-white" for="health">Health</label>
+      <progress id="health" class="health progress is-success" value="" max="150"></progress>
+      <label class="title is-5 has-text-white" for="attack">Attack</label>
+      <progress id="attack" class="attack progress is-warning" value="" max="150"></progress>
+      <label class="title is-5 has-text-white" for="defense">Defense</label>
+      <progress id="defense" class="defense progress is-info" value="" max="150"></progress>
+      <label class="title is-5 has-text-white" for="spAttack">Sp. Attack</label>
+      <progress id="spAttack" class="spattack progress is-warning" value="" max="150"></progress>
+      <label class="title is-5 has-text-white" for="spDefense">Sp. Defense</label>
+      <progress id="spDefense" class="spdefense progress is-info" value="" max="150"></progress>
+      <label class="title is-5 has-text-white" for="speed">Speed</label>
+      <progress id="speed" class="speed progress is-normal" value="" max="150"></progress>
+    </div>
+  </div>
+  <script src="./Javascript/statsScript.js"></script>
+</body>
+</html>
