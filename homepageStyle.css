@@ -7,6 +7,7 @@ h1 {
 .columns {
   display: flex;
   justify-content: center;
+  align-items: flex-start;
   column-gap: 4vmin;
 }
 .column {
@@ -16,7 +17,16 @@ h1 {
   justify-content: center;
 }
 img {
-  filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.7));
+  filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
 }
 
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
+.logo {
+  height: 30vh;
+  filter: none;
+}
