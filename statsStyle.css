@@ -12,6 +12,8 @@
   top: 10px;
   left: 10px;
   border: none;
+  height: 5vmin;
+  width: 5vmin;
 }
 
 img {
