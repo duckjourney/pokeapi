@@ -23,10 +23,28 @@ img {
 header {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
+  margin-bottom: 3vmin;
+  padding: 3vmin 0 7vmin 0;
 }
 
 .logo {
-  height: 30vh;
+  height: 12vmin;
   filter: none;
+  margin: none;
+}
+
+.dropdown-content {
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3vmin;
+    overflow-x: hidden;
+  }
 }

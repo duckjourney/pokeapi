@@ -7,6 +7,13 @@
   justify-content: flex-start;
 }
 
+.go-back {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  border: none;
+}
+
 img {
   filter: drop-shadow(12px 12px 7px rgba(0,0,0,0.7));
 }
@@ -62,4 +69,102 @@ img {
 .speed {
   width: 30vw;
   height: 3vh;
+}
+
+.typesContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1vmin;
+}
+
+.primaryType {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 5vh;
+  width: 13vmin;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.secondaryType {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: capitalize;
+  font-size: 1rem;
+  font-weight: 700;
+  height: 5vh;
+  width: 13vmin;
+  background-color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 100vh;
+    padding: 7vh 0;
+    gap: 3vmin;
+  }
+
+  .primaryType {
+    padding: 0 2vw;
+    width: 20vmin;
+  }
+
+  .secondaryType {
+    padding: 0 2vw;
+    width: 20vmin;
+
+  }
+
+  .stats {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    width: 90vw;
+    margin-top: 5vh;
+  } 
+
+  .health {
+    width: 90vw;
+    height: 3vh;
+  }
+  
+  .attack {
+    width: 90vw;
+    height: 3vh;
+  }
+  
+  .defense {
+    width: 90vw;
+    height: 3vh;
+  }
+  
+  .spattack {
+    width: 90vw;
+    height: 3vh;
+  }
+  
+  .spdefense {
+    width: 90vw;
+    height: 3vh;
+  }
+  
+  .speed {
+    width: 90vw;
+    height: 3vh;
+  }
 }

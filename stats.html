@@ -6,12 +6,22 @@
   <title>Stats</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
   <link rel="stylesheet" href="statsStyle.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
   <div class="container is-fullhd is-fluid has-background-danger">
     <div class="columns is-fluid has-text-centered">
-      <img id="statsImg" class="column is-6 image mb-2" src="" alt="">
+      <button id="go-back" class="button is-normal go-back">
+        <span class="icon">
+          <i class="fa-solid fa-caret-left"></i>
+        </span>
+      </button>
+      <img id="statsImg" class="column image is-6 mb-2" src="" alt="">
       <h1 id="name" class="title is-2"></h1>
+      <div class="typesContainer">
+        <div class="primaryType" id="primaryType"></div>
+        <div class="secondaryType" id="secondaryType"></div>
+      </div>
     </div>
     <div class="stats">
       <label class="title is-5 has-text-white" for="health">Health</label>
