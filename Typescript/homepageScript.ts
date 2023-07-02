@@ -26,6 +26,7 @@ interface PokemonType {
 const $container = document.getElementById("container") as HTMLElement;
 const API = "https://pokeapi.co/api/v2/pokemon/";
 const pokemonList: pokeInfo[] = [];
+const filter = document.getElementById("filter")
 
 // Retrieve pokemons from the API
 
@@ -155,7 +156,12 @@ fetch("https://pokeapi.co/api/v2/type")
         const selectedType = target.dataset.type;
         if (selectedType) {
           filterPokemonsByType(selectedType);
-    
+
+          // Change filter button name to the selected type
+          if (filter) { 
+            filter.textContent = selectedType
+          }
+      
           // Collapse dropdown once a type is clicked
           const dropdown = document.querySelector('.dropdown') as HTMLElement;
           dropdown.classList.remove('is-active');
@@ -200,4 +206,9 @@ const resetFilterButton = document.getElementById(
 
 resetFilterButton.addEventListener("click", () => {
   filterPokemonsByType("all");
+
+  // Change filter button name back to default as no selected type
+  if (filter) { 
+    filter.textContent = "Select type"
+  }
 });

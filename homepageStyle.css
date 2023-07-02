@@ -34,6 +34,11 @@ header {
   margin: none;
 }
 
+#filter { 
+  width: 6vw;
+  text-transform: capitalize; 
+}
+
 .dropdown-content {
   text-transform: capitalize;
 }
@@ -45,6 +50,11 @@ header {
     align-items: center;
     justify-content: space-between;
     gap: 3vmin;
+  }
+
+  #filter {
+    width: fit-content;
+    text-transform: capitalize;
   }
 
 }
