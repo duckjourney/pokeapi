@@ -35,7 +35,7 @@ header {
 }
 
 #filter { 
-  width: 6vw;
+  min-width: 6vw;
   text-transform: capitalize; 
 }
 
@@ -53,7 +53,7 @@ header {
   }
 
   #filter {
-    width: fit-content;
+    min-width: fit-content;
     text-transform: capitalize;
   }
 

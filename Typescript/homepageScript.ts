@@ -186,7 +186,7 @@ function filterPokemonsByType(type: string) {
   });
 }
 
-// Make tghe dropdown open and close on click
+// Make the dropdown open and close on click
 
 document.addEventListener("DOMContentLoaded", () => {
   const dropdownTrigger = document.querySelector(
@@ -209,6 +209,6 @@ resetFilterButton.addEventListener("click", () => {
 
   // Change filter button name back to default as no selected type
   if (filter) { 
-    filter.textContent = "Select type"
+    filter.textContent = "Select Type"
   }
 });

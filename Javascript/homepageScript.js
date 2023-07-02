@@ -2,7 +2,7 @@
 const $container = document.getElementById("container");
 const API = "https://pokeapi.co/api/v2/pokemon/";
 const pokemonList = [];
-const filter = document.getElementById("filter"); // Remove this in case of fire
+const filter = document.getElementById("filter");
 // Retrieve pokemons from the API
 for (let i = 1; i <= 151; i++) {
     const url = API + i;
@@ -96,7 +96,7 @@ fetch("https://pokeapi.co/api/v2/type")
             const selectedType = target.dataset.type;
             if (selectedType) {
                 filterPokemonsByType(selectedType);
-                // Remove this in case of fire
+                // Change filter button name to the selected type
                 if (filter) {
                     filter.textContent = selectedType;
                 }
@@ -121,7 +121,7 @@ function filterPokemonsByType(type) {
         }
     });
 }
-// Make tghe dropdown open and close on click
+// Make the dropdown open and close on click
 document.addEventListener("DOMContentLoaded", () => {
     const dropdownTrigger = document.querySelector(".dropdown-trigger button");
     const dropdown = document.querySelector(".dropdown");
@@ -133,8 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const resetFilterButton = document.getElementById("reset-filter");
 resetFilterButton.addEventListener("click", () => {
     filterPokemonsByType("all");
-    // Remove this in case of fire
+    // Change filter button name back to default as no selected type
     if (filter) {
-        filter.textContent = "Select type";
+        filter.textContent = "Select Type";
     }
 });
