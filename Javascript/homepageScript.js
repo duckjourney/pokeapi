@@ -4,13 +4,13 @@ const API = "https://pokeapi.co/api/v2/pokemon/";
 const pokemonList = [];
 const filter = document.getElementById("filter");
 // Retrieve pokemons from the API
-for (let i = 1; i <= 151; i++) {
+for (let i = 1; i <= 386; i++) {
     const url = API + i;
     fetch(url)
         .then((response) => response.json())
         .then((result) => {
         pokemonList.push(result);
-        if (pokemonList.length === 151) {
+        if (pokemonList.length === 386) {
             showPokemonList();
         }
     })
@@ -69,9 +69,8 @@ if ($searchInput !== null) {
         for (let i = 0; i < pokemonToSearch.length; i++) {
             const eachPokemon = pokemonToSearch[i];
             const pokemonTypes = ((_a = eachPokemon.dataset.type) === null || _a === void 0 ? void 0 : _a.split(",")) || [];
-            // Check if search input is empty
+            // Check if search bar is empty
             if (searchText === '') {
-                // If it is, display all Pokémon that match the current type filter
                 if (pokemonTypes.includes(selectedType) || selectedType === "all" || selectedType === "select type") {
                     eachPokemon.style.display = "";
                 }
