@@ -61,16 +61,35 @@ function showData(pokemon, $row) {
 const $searchInput = document.getElementById("searchInput");
 if ($searchInput !== null) {
     $searchInput.addEventListener("input", () => {
+        var _a;
         const searchText = $searchInput.value.toLowerCase();
         const pokemonToSearch = document.getElementsByClassName("pokemon");
+        // Remember currently selected type
+        const selectedType = (filter && filter.textContent) ? filter.textContent.toLowerCase() : 'all';
         for (let i = 0; i < pokemonToSearch.length; i++) {
             const eachPokemon = pokemonToSearch[i];
-            const pokemonName = eachPokemon.innerText.toLowerCase();
-            if (pokemonName.includes(searchText)) {
-                eachPokemon.style.display = "";
+            const pokemonTypes = ((_a = eachPokemon.dataset.type) === null || _a === void 0 ? void 0 : _a.split(",")) || [];
+            // Check if search input is empty
+            if (searchText === '') {
+                // If it is, display all Pokémon that match the current type filter
+                if (pokemonTypes.includes(selectedType) || selectedType === "all" || selectedType === "select type") {
+                    eachPokemon.style.display = "";
+                }
+                else {
+                    eachPokemon.style.display = "none";
+                }
             }
             else {
-                eachPokemon.style.display = "none";
+                // If it's not empty, search only among the Pokémon that are currently displayed
+                if (eachPokemon.style.display !== "none") {
+                    const pokemonName = eachPokemon.innerText.toLowerCase();
+                    if (pokemonName.includes(searchText)) {
+                        eachPokemon.style.display = "";
+                    }
+                    else {
+                        eachPokemon.style.display = "none";
+                    }
+                }
             }
         }
     });

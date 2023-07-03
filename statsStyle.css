@@ -132,6 +132,10 @@ img {
     width: 10vmin;
   }
 
+  #name {
+    font-size: 2rem;
+  }
+
   .typesContainer {
     margin-bottom: 3vh;
   }

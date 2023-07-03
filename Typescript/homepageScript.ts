@@ -109,7 +109,6 @@ function showData(pokemon: pokeInfo, $row: HTMLElement): void {
 }
 
 // Search bar
-
 const $searchInput = document.getElementById("searchInput") as HTMLInputElement;
 
 if ($searchInput !== null) {
@@ -118,17 +117,37 @@ if ($searchInput !== null) {
 
     const pokemonToSearch = document.getElementsByClassName("pokemon");
 
+    // Remember currently selected type
+    const selectedType = (filter && filter.textContent) ? filter.textContent.toLowerCase() : 'all';
+
     for (let i = 0; i < pokemonToSearch.length; i++) {
       const eachPokemon = pokemonToSearch[i] as HTMLElement;
-      const pokemonName = eachPokemon.innerText.toLowerCase();
-      if (pokemonName.includes(searchText)) {
-        eachPokemon.style.display = "";
+      const pokemonTypes = eachPokemon.dataset.type?.split(",") || [];
+
+      // Check if search input is empty
+      if (searchText === '') {
+        // If it is, display all Pokémon that match the current type filter
+        if (pokemonTypes.includes(selectedType) || selectedType === "all" || selectedType === "select type") {
+          eachPokemon.style.display = "";
+        } else {
+          eachPokemon.style.display = "none";
+        }
       } else {
-        eachPokemon.style.display = "none";
+        // If it's not empty, search only among the Pokémon that are currently displayed
+        if (eachPokemon.style.display !== "none") {
+          const pokemonName = eachPokemon.innerText.toLowerCase();
+          if (pokemonName.includes(searchText)) {
+            eachPokemon.style.display = "";
+          } else {
+            eachPokemon.style.display = "none";
+          }
+        }
       }
     }
   });
 }
+
+
 fetch("https://pokeapi.co/api/v2/type")
   .then((response) => response.json())
   .then((data: ApiResponse) => {
